@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,16 @@ Route::middleware('SizeVerification')->group(function (){
         return 'Its okey';
     });
 });
+
+#Создаем правило проверки на прослойку
+#Внутри group будут маршруты
+Route::middleware('validationToken')->group(function (){
+    Route::get('/project', function (){return 'Project One';});
+});
+#прописали маршрутдо MainController метода test
+# Ссылка: http://domain/main
+Route::get('main', [MainController::class, 'test']);
+Route::get('ip', [MainController::class, 'index']);
+
+#Маршрут с параметром для ID пользователя
+Route::get('user/{id}', [MainController::class,  'user'])->whereNumber('id');

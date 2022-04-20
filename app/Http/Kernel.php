@@ -64,5 +64,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'SizeVerification' => \App\Http\Middleware\SizeInValid::class,
+        #Создаем именованный MiddleWare чтобы обращаться по имени
+        #Имя будет validationToken
+        'validationToken' => \App\Http\Middleware\TokenValid::class,
     ];
 }
