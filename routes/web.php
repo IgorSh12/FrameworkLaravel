@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\MainController;
-
+use \App\Http\Controllers\TestController;
+use App\Http\Controllers\MyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,17 @@ Route::get('ip', [MainController::class, 'index']);
 
 #Маршрут с параметром для ID пользователя
 Route::get('user/{id}', [MainController::class,  'user'])->whereNumber('id');
+
+//1
+Route::get('my', [MyController::class, 'education']);
+//2
+Route::get('Name/{name}', [MyController::class, 'name']);
+//3
+Route::get('my-name/{name}/{fruit}', [MyController::class, 'name_fruit']);
+//4
+Route::get('sum', [MyController::class, 'summa']);
+//5
+Route::get('sum/{one}/{two}', [MyController::class, 'sum']);
+//6
+Route::get('check/{cipher}', [MyController::class, 'CheckKey']);
+
