@@ -51,4 +51,17 @@ Route::get('sum', [MyController::class, 'summa']);
 Route::get('sum/{one}/{two}', [MyController::class, 'sum']);
 //6
 Route::get('check/{cipher}', [MyController::class, 'CheckKey']);
+//2 часть
+//1
+Route::get('document', [TestController::class, 'MyDoc']);
+//2
+Route::get('organisation', [TestController::class, 'DocOrg']);
+//3
+Route::get('Mybook', [TestController::class, 'MyBook']);
+//4
+Route::get('Mus', [TestController::class, 'Mus']);
+//5
+Route::get('Array', [TestController::class, 'Temp5']);
+//5
+Route::get('Span', [TestController::class, 'Temp6']);
 
